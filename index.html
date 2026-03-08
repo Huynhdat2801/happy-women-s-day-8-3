@@ -1,0 +1,202 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Happy 8/3</title>
+
+<style>
+
+body{
+margin:0;
+overflow:hidden;
+font-family:Arial;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+text-align:center;
+}
+
+/* hoa bay */
+
+.flower{
+position:absolute;
+bottom:-50px;
+font-size:28px;
+animation:fly linear forwards;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+/* trung tâm */
+
+.center{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+display:none;
+}
+
+/* hoa tulip */
+
+.tulip{
+width:180px;
+margin:auto;
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.08)}
+100%{transform:scale(1)}
+}
+
+/* lá thư */
+
+.envelope{
+margin-top:25px;
+width:120px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.envelope:hover{
+transform:scale(1.1);
+}
+
+/* chữ hướng dẫn */
+
+.hint{
+color:white;
+margin-top:10px;
+font-size:18px;
+}
+
+/* màn thư */
+
+.message{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+/* thiệp */
+
+.card{
+background:white;
+color:#ff4d6d;
+padding:40px;
+border-radius:20px;
+width:360px;
+font-size:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.3);
+animation:pop 0.5s;
+}
+
+@keyframes pop{
+0%{transform:scale(0.5)}
+100%{transform:scale(1)}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="center" id="center">
+
+<img class="tulip"
+src="https://cdn-icons-png.flaticon.com/512/765/765613.png">
+
+<img class="envelope"
+onclick="openLetter()"
+src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+
+<div class="hint">Nhấn vào lá thư 💌</div>
+
+</div>
+
+<div class="message" id="message">
+
+<div class="card">
+
+<h2>🌸 Happy Women's Day 🌸</h2>
+
+<p>
+Chúc Hải Nhi có một ngày 8/3 thật tuyệt vời, đôi khi chúng ta không hiểu nhau không phải vì không hợp nhau,
+có lẽ chúng ta vẫn chưa chịu chia sẻ cho nhau, a muốn được hiểu Nhi hơn, những chuyện không vyu rồi cùng trôi/
+qua theo năm tháng, quan trọng là sau vấn đề đó thì ai mới thật sự hiểu ai và ai sẽ là người chọn ở lại thôi.
+  CHÚC MỘT NGÀY THẬT TUYỆT VỜI ĐẾN VỚI HẢI NHI NHÉ !!, ĐÔI KHI BẠN THẤY NHỮNG ĐÓA HOA NGOÀI KIA KHÁ ĐẸP
+  VÀ RỰC RỠ NHƯNG ĐỪNG QUÊN MẤT BẢN THÂN MÌNH RẰNG BẠN CŨNG LÀ MỘT BÔNG HOA TRONG MẮT MỘT AI ĐÓ <3. 
+</p>
+
+<p>
+Mong rằng mỗi ngày của bạn đều
+đầy nụ cười và những điều dễ thương ✨
+</p>
+
+<p>
+Cảm ơn vì đã làm thế giới này
+dễ thương hơn một chút.
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* hoa bay */
+
+function createFlower(){
+
+const flower=document.createElement("div")
+
+flower.className="flower"
+flower.innerHTML="🌸"
+
+flower.style.left=Math.random()*100+"%"
+
+flower.style.animationDuration=4+Math.random()*3+"s"
+
+document.body.appendChild(flower)
+
+setTimeout(()=>{
+flower.remove()
+},7000)
+
+}
+
+setInterval(createFlower,400)
+
+/* hiện trung tâm */
+
+setTimeout(()=>{
+document.getElementById("center").style.display="block"
+},3000)
+
+/* mở thư */
+
+function openLetter(){
+document.getElementById("message").style.display="flex"
+}
+
+</script>
+
+</body>
+</html>
+```
